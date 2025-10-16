@@ -5,7 +5,7 @@ import sys
 # Configuración
 RFC2217_HOST = 'localhost'
 RFC2217_PORT = 4000
-VIRTUAL_COM = 'COM1'  # ← CAMBIO AQUÍ
+VIRTUAL_COM = 'COM3'  # ← CAMBIO AQUÍ
 BAUDRATE = 9600
 
 print("=== PUENTE WOKWI ↔ PROCESSING ===")
@@ -18,7 +18,7 @@ try:
     
     ser = serial.Serial(VIRTUAL_COM, BAUDRATE, timeout=1)
     print(f"✓ Puerto virtual {VIRTUAL_COM} abierto")
-    print(f"\nAhora conecta Processing a COM2")
+    print(f"\nAhora conecta Processing a COM4")
     print("Presiona Ctrl+C para detener\n")
     
     while True:
@@ -36,7 +36,7 @@ except ConnectionRefusedError:
     sys.exit(1)
 except serial.SerialException as e:
     print(f"\n✗ Error con puerto serial: {e}")
-    print("Verifica que COM1 esté disponible")
+    print("Verifica que COM3 esté disponible")
     sys.exit(1)
 except KeyboardInterrupt:
     print("\n\nCerrando conexiones...")

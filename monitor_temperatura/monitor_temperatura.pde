@@ -14,7 +14,7 @@ void setup() {
   // IMPORTANTE: Ajustar el índice según tu sistema
   // En Windows suele ser el puerto COM más alto
   try {
-    String portName = Serial.list()[1];
+    String portName = Serial.list()[3];
     puerto = new Serial(this, portName, 9600);
     puerto.bufferUntil('\n');
     println("Conectado a: " + portName);
